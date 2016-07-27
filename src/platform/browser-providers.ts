@@ -11,6 +11,10 @@ import { provideRouter } from '@angular/router';
 // Angular 2 forms
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
+// Angular 2 Material
+// TODO(gdi2290): replace with @angular2-material/all
+import { MATERIAL_PROVIDERS } from './browser/angular2-material2';
+
 // AngularClass
 import { provideWebpack } from '@angularclass/webpack-toolkit';
 import { providePrefetchIdleCallbacks } from '@angularclass/request-idle-callback';
@@ -34,6 +38,7 @@ export const APPLICATION_PROVIDERS = [
   providePrefetchIdleCallbacks(prefetchRouteCallbacks),
 
   ...HTTP_PROVIDERS,
+  ...MATERIAL_PROVIDERS,
 
   { provide: LocationStrategy, useClass: HashLocationStrategy }
 ];
